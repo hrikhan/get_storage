@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_all_widgets/loginpage/get_storage_utils.dart';
 import 'package:flutter_all_widgets/navigation_bar.dart';
 import 'package:get/get.dart';
 
@@ -150,9 +151,8 @@ class _loginState extends State<login> {
                         formKey.currentState!.save();
                       }
 
-                      print(email.text);
-                      print(password.text);
-                      print(name.text);
+                      getsttorage.set_first_time_login(false);
+                      Get.to(buttomnavbar());
                     },
                     child: Text('Register')),
               )

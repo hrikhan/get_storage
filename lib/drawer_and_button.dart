@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_all_widgets/container_row_colum.dart';
 import 'package:flutter_all_widgets/listView_builder.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter_all_widgets/loginpage/get_storage_utils.dart';
 import 'package:flutter_all_widgets/loginpage/registration.dart';
 import 'package:get/get.dart';
 
@@ -106,7 +107,10 @@ class _DrawerAndButtonState extends State<DrawerAndButton> {
                 color: Colors.red,
               ),
               title: InkWell(
-                onTap: () => Get.offAll(() => login()),
+                onTap: () {
+                  getsttorage.set_first_time_login(true);
+                  Get.offAll(() => login());
+                },
                 child: Text(
                   "logout",
                   style: TextStyle(color: Colors.red, fontSize: 20),
