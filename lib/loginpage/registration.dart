@@ -78,7 +78,6 @@ class _loginState extends State<login> {
                             if (value!.isEmpty) {
                               return 'Email is required';
                             }
-                            return null;
                           },
                         ),
                         SizedBox(
@@ -91,16 +90,13 @@ class _loginState extends State<login> {
                               border: OutlineInputBorder(gapPadding: 4)),
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Email is required';
+                              return ' required';
                             }
-                            return null;
                           },
                         ),
                         SizedBox(
                           height: 7,
                         ),
-                        //varibles
-
                         TextFormField(
                           controller: password,
                           obscureText: secure,
@@ -123,9 +119,8 @@ class _loginState extends State<login> {
                               border: OutlineInputBorder(gapPadding: 4)),
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Email is required';
+                              return ' required';
                             }
-                            return null;
                           },
                         ),
                         SizedBox(
@@ -149,10 +144,10 @@ class _loginState extends State<login> {
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
-                      }
+                        getsttorage.set_first_time_login(false);
 
-                      getsttorage.set_first_time_login(false);
-                      Get.to(buttomnavbar());
+                        Get.to(() => buttomnavbar());
+                      }
                     },
                     child: Text('Register')),
               )

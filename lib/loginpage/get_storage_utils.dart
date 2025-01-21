@@ -2,7 +2,7 @@ import 'package:get_storage/get_storage.dart';
 
 class getsttorage {
  static final _storage = GetStorage();
- static final _key = 'key';
+ static const _key = 'key';
 
  static bool is_first_time_login() {
     return _storage.read(_key) ?? true;
